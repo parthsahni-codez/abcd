@@ -1,0 +1,104 @@
+.agent-dashboard {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.agent-card {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.active-glow {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+.done-border {
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+.agent-header {
+  margin-bottom: 1.5rem;
+}
+
+.agent-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--surface-light);
+}
+
+.agent-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--surface-light);
+}
+
+.status-badge.running {
+  color: var(--primary-neon);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.status-badge.done {
+  color: var(--success-neon);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  border-top-color: var(--primary-neon);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--surface-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-neon), var(--purple-neon));
+  animation: fillProgress 1.5s linear forwards;
+}
+
+.progress-bar.done .progress-fill {
+  width: 100%;
+  background: var(--success-neon);
+  animation: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}

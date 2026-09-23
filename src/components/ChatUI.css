@@ -1,0 +1,110 @@
+.chat-ui-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.chat-container {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--primary-glow);
+}
+
+.chat-header {
+  background: rgba(0, 240, 255, 0.1);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.chat-messages {
+  padding: 2rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-bubble {
+  display: flex;
+  gap: 1rem;
+  max-width: 80%;
+}
+
+.message-bubble.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.message-bubble.bot .avatar {
+  background: rgba(0, 240, 255, 0.2);
+  color: var(--primary-neon);
+}
+
+.message-bubble.user .avatar {
+  background: rgba(176, 38, 255, 0.2);
+  color: var(--purple-neon);
+}
+
+.message-text {
+  background: var(--surface-light);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border-top-left-radius: 0;
+}
+
+.message-bubble.bot .message-text {
+  border: 1px solid var(--primary-glow);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.05);
+}
+
+.message-bubble.user .message-text {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0;
+  background: rgba(176, 38, 255, 0.1);
+  border: 1px solid var(--purple-glow);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-left: 3rem; /* Align with bot text */
+  margin-top: 0.5rem;
+}
+
+.btn-error {
+  background: var(--error-neon);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 15px var(--error-glow);
+}
+
+.btn-error:hover {
+  box-shadow: 0 0 25px var(--error-glow);
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+}

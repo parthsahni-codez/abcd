@@ -1,0 +1,114 @@
+.analytics-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.stat-card {
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.bg-success-light { background: rgba(57, 255, 20, 0.1); }
+.bg-primary-light { background: rgba(0, 240, 255, 0.1); }
+.bg-warning-light { background: rgba(255, 234, 0, 0.1); }
+
+.stat-value {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.chart-bar-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.chart-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 100%;
+}
+
+.bar {
+  width: 30px;
+  border-radius: 4px 4px 0 0;
+  animation: growUp 1s ease-out forwards;
+  transform-origin: bottom;
+}
+
+.bar.type-1 { background: var(--error-neon); }
+.bar.type-2 { background: var(--warning-neon); }
+.bar.type-3 { background: var(--primary-neon); }
+
+@keyframes growUp {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.issue-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.dot-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot-label .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-label .dot.type-1 { background: var(--error-neon); }
+.dot-label .dot.type-2 { background: var(--warning-neon); }
+.dot-label .dot.type-3 { background: var(--primary-neon); }

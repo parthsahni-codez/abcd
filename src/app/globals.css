@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0F14;
+  --color-card: #11161C;
+  --color-card-hover: #1A222C;
+  --color-text-main: #E6EDF3;
+  --color-text-muted: #9DA7B3;
+  --color-accent: #4F9CF9;
+}
+
+@layer base {
+  :root {
+    --background: #0B0F14;
+    --foreground: #E6EDF3;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-md border border-white/5;
+  }
+}

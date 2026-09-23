@@ -1,0 +1,102 @@
+.autofix-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.diff-viewer {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.diff-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.diff-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.diff-body {
+  background: #0d1117;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.diff-line {
+  display: flex;
+}
+
+.line-num {
+  width: 50px;
+  padding: 0 10px;
+  text-align: right;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--glass-border);
+  user-select: none;
+}
+
+.code {
+  padding-left: 1.5rem;
+  white-space: pre;
+}
+
+.diff-line.removed {
+  background: rgba(255, 7, 58, 0.15);
+}
+
+.diff-line.removed .code {
+  color: #ff7b72;
+}
+
+.diff-line.added {
+  background: rgba(57, 255, 20, 0.15);
+}
+
+.diff-line.added .code {
+  color: #7ee787;
+}
+
+.diff-line.unchanged .code {
+  color: #c9d1d9;
+}
+
+.diff-footer {
+  padding: 1.5rem;
+  background: var(--surface-dark);
+  border-top: 1px solid var(--glass-border);
+}
+
+.animate-pulse {
+  animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+  0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 240, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+}
+
+.success-message {
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
