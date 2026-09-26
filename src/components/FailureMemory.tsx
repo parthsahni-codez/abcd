@@ -18,7 +18,7 @@ const FailureMemory: React.FC = () => {
             <h3>Memory Match Found</h3>
           </div>
           <p className="text-muted text-center mt-2 mb-4">
-            "Similar error fixed before in repository backend-api."
+            &quot;Similar error fixed before in repository backend-api.&quot;
           </p>
           
           <div className="memory-timeline">
@@ -33,7 +33,7 @@ const FailureMemory: React.FC = () => {
               <div className="timeline-icon"><GitCommit size={14} /></div>
               <div className="timeline-content">
                 <span className="date">Oct 12, 2025</span>
-                <p>Developer 'jdoe' committed a fix for null checking.</p>
+                <p>Developer &apos;jdoe&apos; committed a fix for null checking.</p>
               </div>
             </div>
             <div className="timeline-item active">

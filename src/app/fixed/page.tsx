@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 function FixedPageContent() {
-  const [mounted, setMounted] = useState(false);
   const searchParams = useSearchParams();
   let targetUrl = searchParams.get('url') || '#';
   
@@ -15,12 +14,6 @@ function FixedPageContent() {
   if (targetUrl !== '#' && !targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
     targetUrl = 'https://' + targetUrl;
   }
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0B0F14] relative overflow-hidden">

@@ -44,7 +44,7 @@ const AutoFixPR: React.FC = () => {
           </div>
           <div className="diff-line added">
             <span className="line-num">42</span>
-            <span className="code">+   if (!user) throw new Error('User not found');</span>
+            <span className="code">+   if (!user) throw new Error(&apos;User not found&apos;);</span>
           </div>
           <div className="diff-line added">
             <span className="line-num">43</span>

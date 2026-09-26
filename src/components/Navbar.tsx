@@ -13,11 +13,6 @@ export default function Navbar() {
             </div>
             <span className="font-semibold text-lg tracking-tight text-white">AutoDevOps</span>
           </Link>
-          <div className="flex gap-4 text-sm text-[#9DA7B3]">
-            <span className="hover:text-white transition-colors cursor-pointer">Docs</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Dashboard</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Settings</span>
-          </div>
         </div>
       </div>
     </nav>

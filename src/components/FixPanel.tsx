@@ -257,7 +257,7 @@ const ERROR_SETS = [
   ]
 ];
 
-export default function FixPanel({ targetUrl, issues = [] }: FixPanelProps) {
+export default function FixPanel({ targetUrl }: FixPanelProps) {
   const [isApplying, setIsApplying] = useState(false);
   const [isReviewingFixes, setIsReviewingFixes] = useState(false);
   const [isLoadingLogs, setIsLoadingLogs] = useState(false);

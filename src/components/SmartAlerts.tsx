@@ -3,8 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { Bell, ShieldAlert, Cpu } from 'lucide-react';
 import './SmartAlerts.css';
 
+interface Alert {
+  id: number;
+  type: 'warning' | 'info';
+  text: string;
+  time: string;
+}
+
 const SmartAlerts: React.FC = () => {
-  const [alerts, setAlerts] = useState<any[]>([]);
+  const [alerts, setAlerts] = useState<Alert[]>([]);
 
   useEffect(() => {
     // Simulate incoming alerts

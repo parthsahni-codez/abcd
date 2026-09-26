@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Search, Tag, Cpu, FileCode, CheckCircle, Eye } from 'lucide-react';
+import { Search, Tag, Cpu, FileCode, CheckCircle, Eye, type LucideIcon } from 'lucide-react';
 import './AgentDashboard.css';
 
 interface AgentData {
   id: string;
   name: string;
-  icon: React.FC<any>;
+  icon: LucideIcon;
   status: 'Idle' | 'Running' | 'Done';
   delay: number;
 }
@@ -27,7 +27,7 @@ const AgentDashboard: React.FC = () => {
     // Sequence the agents running
     const timeouts: ReturnType<typeof setTimeout>[] = [];
     
-    agents.forEach((agent) => {
+    initialAgents.forEach((agent) => {
       // Set to running
       timeouts.push(
         setTimeout(() => {

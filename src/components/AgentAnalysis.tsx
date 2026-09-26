@@ -30,13 +30,13 @@ export default function AgentAnalysis({ onComplete }: AgentAnalysisProps) {
     const currentAgent = agents[activeAgentIndex];
     
     if (activeStepIndex >= currentAgent.steps.length) {
-      setCompletedAgents(prev => [...prev, currentAgent.id]);
-      setTimeout(() => {
+      const completionTimeout = setTimeout(() => {
+        setCompletedAgents(prev => prev.includes(currentAgent.id) ? prev : [...prev, currentAgent.id]);
         setActiveAgentIndex(prev => prev + 1);
         setActiveStepIndex(0);
         setTypedText('');
       }, 400);
-      return;
+      return () => clearTimeout(completionTimeout);
     }
 
     const currentStepText = currentAgent.steps[activeStepIndex];
@@ -68,7 +68,6 @@ export default function AgentAnalysis({ onComplete }: AgentAnalysisProps) {
         {agents.map((agent, index) => {
           const isActive = index === activeAgentIndex;
           const isCompleted = completedAgents.includes(agent.id);
-          const isPending = index > activeAgentIndex;
           
           return (
             <motion.div
